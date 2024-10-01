@@ -123,7 +123,7 @@ def main():
     unique_data = list(set(all_data))
 
     # 过滤延迟数据低于100ms的行
-    filtered_data = [line for line in unique_data if float(line.split('-')[-1].replace('ms', '')) < 300]
+    filtered_data = [line for line in unique_data if float(line.split('-')[-1].replace('ms', '')) < 200]
 
     # 检查ip.txt文件是否存在,如果存在则删除它
     if os.path.exists('yx_ips.txt'):
