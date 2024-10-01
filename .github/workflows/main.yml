@@ -37,12 +37,9 @@ jobs:
         git config --global user.email "tianshideyou@proton.me"
         git config --global user.name "tianshipapa"
         if [ -n "$(git status --porcelain)" ]; then
-          git add ip.txt
+          git add ip.txt yx_ips.txt
           git commit -m "Automatic update"
-          git push
-          git add yx_ips.txt
-          git commit -m "Automatic update"
-          git push          
+          git push    
         else
           echo "No changes detected, skipping commit."
         fi
