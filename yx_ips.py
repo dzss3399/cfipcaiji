@@ -80,7 +80,7 @@ def process_site_data(url):
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
-                    data.append(f"{ip_address}-{latency_value}{latency_unit}")
+                    data.append(f"{ip_address}#{latency_value}{latency_unit}")
 
     elif "monitor.gacjie.cn" in url:
         rows = soup.find_all('tr')
