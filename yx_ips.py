@@ -16,7 +16,7 @@ urls = [
     "https://ip.164746.xyz/",
     "https://monitor.gacjie.cn/page/cloudflare/ipv4.html",
     "https://345673.xyz/"
-    "https://stock.hostmonit.com/CloudFlareYesV6"
+    "https://www.wetest.vip/page/cloudflare/address_v4.html"
 ]
 
 # 解析延迟数据的正则表达式
@@ -86,6 +86,21 @@ def process_site_data(url):
                     data.append(f"{ip_address}#-{latency_value}{latency_unit}")
 
     elif "monitor.gacjie.cn" in url:
+        rows = soup.find_all('tr')
+        for row in rows:
+            tds = row.find_all('td')
+            if len(tds) >= 5:
+                line_name = tds[0].text.strip()
+                ip_address = tds[1].text.strip()
+                latency_text = tds[4].text.strip()
+                latency_match = latency_pattern.match(latency_text)
+                if latency_match:
+                    latency_value = latency_match.group(1)
+                    latency_unit = 'ms'
+                    data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
+
+
+     elif "www.wetest.vip" in url:
         rows = soup.find_all('tr')
         for row in rows:
             tds = row.find_all('td')
