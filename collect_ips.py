@@ -6,6 +6,7 @@ import os
 # 目标URL列表
 urls = [#'https://monitor.gacjie.cn/page/cloudflare/ipv4.html', 
         'https://ip.164746.xyz'
+        'https://stock.hostmonit.com/CloudFlareYesV6'
         ]
 
 # 正则表达式用于匹配IP地址
@@ -20,7 +21,7 @@ with open('ip.txt', 'w') as file:
     for url in urls:
         # 发送HTTP请求获取网页内容
         response = requests.get(url)
-        
+        print(response)
         # 使用BeautifulSoup解析HTML
         soup = BeautifulSoup(response.text, 'html.parser')
         
