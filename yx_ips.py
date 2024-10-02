@@ -15,7 +15,7 @@ urls = [
     "https://stock.hostmonit.com/CloudFlareYes",
     "https://ip.164746.xyz/",
     "https://monitor.gacjie.cn/page/cloudflare/ipv4.html",
-    "https://345673.xyz/"
+    "https://345673.xyz/",
     "https://www.wetest.vip/page/cloudflare/address_v4.html"
 ]
 
