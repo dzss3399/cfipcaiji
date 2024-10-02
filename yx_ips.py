@@ -16,8 +16,8 @@ urls = [
     "https://ip.164746.xyz/",
     "https://monitor.gacjie.cn/page/cloudflare/ipv4.html",
     "https://345673.xyz/",
-    "https://www.wetest.vip/page/cloudflare/address_v4.html"
-    "https://www.wetest.vip/page/cloudflare/address_v6.html",
+    "https://www.wetest.vip/page/cloudflare/address_v4.html",
+    "https://www.wetest.vip/page/cloudflare/address_v6.html"
 ]
 
 # 解析延迟数据的正则表达式
