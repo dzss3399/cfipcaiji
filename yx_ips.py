@@ -64,7 +64,6 @@ def process_site_data(url):
                 line_name = columns[0].text.strip()
                 ip_address = columns[1].text.strip()
                 latency_text = columns[2].text.strip()
-                print(latency_text)
                 latency_match = latency_pattern.match(latency_text)
                 print(latency_text)
                 if latency_match:
@@ -107,6 +106,7 @@ def process_site_data(url):
             if len(tds) >= 5:
                 line_name = tds[0].text.strip()
                 ip_address = tds[1].text.strip()
+                print(line_name)
                 latency_text = tds[4].text.strip()
                 latency_match = latency_pattern.match(latency_text)
                 if latency_match:
