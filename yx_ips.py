@@ -100,7 +100,7 @@ def process_site_data(url):
                     data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
 
 
-    elif "www.wetest.vip" in url:
+    elif "https://www.wetest.vip/page/cloudflare/address_v4.html" in url:
         rows = soup.find_all('tr')
         for row in rows:
             tds = row.find_all('td')
@@ -116,7 +116,24 @@ def process_site_data(url):
                     latency_unit = 'ms'
                     data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
                     print(data)
-
+                    
+    elif "https://www.wetest.vip/page/cloudflare/address_v6.html" in url:
+        rows = soup.find_all('tr')
+        for row in rows:
+            tds = row.find_all('td')
+            if len(tds) >= 5:
+                line_name = tds[0].text.strip()
+                ip_address = tds[1].text.strip()
+                print(line_name)
+                latency_text = tds[4].text.strip()
+                latency_match = latency_pattern.match(latency_text)
+                if latency_match:
+                    latency_value = latency_match.group(1)
+                    print(latency_match)
+                    latency_unit = 'ms'
+                    data.append(f"[{ip_address}]#{line_name}-{latency_value}{latency_unit}")
+                    print(data)
+                    
     elif "345673.xyz" in url:
         rows = soup.find_all('tr', class_=re.compile(r'line-cm|line-ct|line-cu'))
         for row in rows:
