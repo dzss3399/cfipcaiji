@@ -63,7 +63,9 @@ def process_site_data(url):
                 line_name = columns[0].text.strip()
                 ip_address = columns[1].text.strip()
                 latency_text = columns[2].text.strip()
+                print(latency_text)
                 latency_match = latency_pattern.match(latency_text)
+                print(latency_text)
                 if latency_match:
                     latency_value = latency_match.group(1)
                     latency_unit = 'ms'
