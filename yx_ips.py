@@ -112,8 +112,10 @@ def process_site_data(url):
                 latency_match = latency_pattern.match(latency_text)
                 if latency_match:
                     latency_value = latency_match.group(1)
+                    print(latency_match)
                     latency_unit = 'ms'
                     data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
+                    print(data)
 
     elif "345673.xyz" in url:
         rows = soup.find_all('tr', class_=re.compile(r'line-cm|line-ct|line-cu'))
