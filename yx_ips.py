@@ -100,7 +100,7 @@ def process_site_data(url):
                     data.append(f"{ip_address}#{line_name}-{latency_value}{latency_unit}")
 
 
-     elif "www.wetest.vip" in url:
+    elif "www.wetest.vip" in url:
         rows = soup.find_all('tr')
         for row in rows:
             tds = row.find_all('td')
