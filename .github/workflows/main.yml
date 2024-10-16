@@ -31,6 +31,7 @@ jobs:
       run: |
           python ${{ github.workspace }}/collect_ips.py
           python ${{ github.workspace }}/yx_ips.py
+          python ${{ github.workspace }}/yx_ipscfa.py
         
     - name: Commit and push changes
       run: |
