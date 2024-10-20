@@ -137,6 +137,8 @@ def main():
 
     # 执行清空DNS记录的操作
     clear_dns_records()
+    print(f"CF_API_KEY-- {CF_API_KEY}. CF_ZONE_ID code-- {CF_ZONE_ID}")
+    print(f"CF_DOMAIN_NAME-- {CF_DOMAIN_NAME}. CF_API_EMAIL code-- {CF_API_EMAIL}")
     
     # 从yx_ipscfa.txt文件中提取IPv4地址
     with open("yx_ipscfa.txt", "r") as file:
