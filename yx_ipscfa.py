@@ -138,7 +138,7 @@ def main():
     # 执行清空DNS记录的操作
     clear_dns_records()
     
-    # 从yx_ips.txt文件中提取IPv4地址
+    # 从yx_ipscfa.txt文件中提取IPv4地址
     with open("yx_ipscfa.txt", "r") as file:
         ipv4 = [line.split('#')[0] for line in file if '#' in line]
 
