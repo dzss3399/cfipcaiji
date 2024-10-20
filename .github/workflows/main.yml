@@ -28,6 +28,11 @@ jobs:
         pip install beautifulsoup4
         
     - name: Run script
+      env:
+        CF_API_KEY : ${{ secrets.CF_API_KEY}}
+        CF_ZONE_ID: ${{ secrets.CF_ZONE_ID }}
+        CF_DOMAIN_NAME: ${{ secrets.CF_DOMAIN_NAME}}
+        CF_API_EMAIL : ${{ secrets.CF_API_EMAIL}}
       run: |
           python ${{ github.workspace }}/collect_ips.py
           python ${{ github.workspace }}/yx_ips.py
