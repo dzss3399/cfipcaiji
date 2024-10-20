@@ -130,7 +130,7 @@ def main():
     # 过滤延迟数据低于100ms的行
     filtered_data = [line for line in unique_data if float(line.split('-')[-1].replace('ms', '')) < 100]
 
-    # 写入到yx_ips.txt文件
+    # 写入到yx_ipscfa.txt文件
     with open('yx_ipscfa.txt', 'w', encoding='utf-8') as f:
         for line in filtered_data:
             f.write(line + '\n')
