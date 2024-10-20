@@ -186,7 +186,7 @@ def add_dns_record(ip):
     data = {
         "type": "A",
         "name": CF_DOMAIN_NAME,
-        "content": {ip},
+        "content": ip,
         "ttl": 60,  # 设置TTL为1分钟
         "proxied": False
     }
